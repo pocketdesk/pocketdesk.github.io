@@ -1,6 +1,6 @@
 ---
 title: "code-server (fallback)"
-weight: 6
+weight: 7
 ---
 
 # code-server — the reliable fallback

@@ -1,6 +1,6 @@
 ---
 title: "Linux Terminal"
-weight: 3
+weight: 4
 ---
 
 # Enable the Linux Terminal (Debian VM)

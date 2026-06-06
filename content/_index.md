@@ -29,6 +29,7 @@ Pixel 10 Pro XL (today) / 11 Pro XL (tomorrow)
 
 - [Overview]({{< relref "docs/overview" >}}) — what this is and why it works
 - [Hardware]({{< relref "docs/hardware" >}}) — phone, glasses, keyboard
+- [Multi-screen (AR)]({{< relref "docs/multi-screen" >}}) — what's real, and where it lives
 - [Linux Terminal]({{< relref "docs/linux-terminal" >}}) — enable the Debian VM
 - [Wayland desktop]({{< relref "docs/desktop-wayland" >}}) — labwc + input
 - [VS Code]({{< relref "docs/vscode" >}}) — native GUI install

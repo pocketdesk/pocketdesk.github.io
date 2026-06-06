@@ -1,6 +1,6 @@
 ---
 title: "Wayland desktop"
-weight: 4
+weight: 5
 ---
 
 # Wayland desktop (labwc)

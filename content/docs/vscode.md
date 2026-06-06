@@ -1,6 +1,6 @@
 ---
 title: "VS Code"
-weight: 5
+weight: 6
 ---
 
 # VS Code (native GUI)
