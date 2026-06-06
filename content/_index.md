@@ -17,9 +17,11 @@ identical on both, so every guide here is model-agnostic.
 
 ## The stack at a glance
 
+![pocketdesk stack: Pixel host → AR display, Bluetooth keyboard, Android Linux Terminal → labwc + VS Code / code-server](/images/stack.svg)
+
 ```
 Pixel 10 Pro XL (today) / 11 Pro XL (tomorrow)
-  ├─ Viture Beast       → USB-C DisplayPort → 1200p virtual screen
+  ├─ Beast · Luma Ultra · XReal 1S → USB-C DisplayPort → 1200p virtual screen
   ├─ ProtoArc XK01 TP   → Bluetooth (paired in Android) → keyboard + trackpad
   └─ Android Linux Terminal (Debian VM, AVF/KVM)
        └─ labwc + VS Code (Wayland)   [fallback: code-server in the browser]

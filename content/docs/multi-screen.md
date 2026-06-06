@@ -62,6 +62,8 @@ the bright display + SpaceWalker, but not full 6DoF.
 
 ## The pocketdesk reality: multi-screen comes from your WM
 
+![One ultrawide DisplayPort output tiled into VS Code, terminal and browser by sway/labwc](/images/multiscreen.svg)
+
 A phone outputs **one** display over DisplayPort. So the glasses give you **one** big
 (optionally anchored / ultrawide) screen — not three independent OS monitors. Your
 "multiple screens" come from **tiling in the Wayland compositor**, not from glasses
