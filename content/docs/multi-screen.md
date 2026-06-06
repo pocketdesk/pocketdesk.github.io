@@ -17,29 +17,37 @@ landing). Re-verify before buying.
 
 ## Specs comparison
 
-| | **XREAL 1S** | **Viture Luma Pro** | **Viture Beast** |
+| | **XREAL 1S** | **Viture Luma Ultra** | **Viture Beast** |
 |---|---|---|---|
-| Price | **$449** | $499 | $549 |
+| Price | **$449** | $599 | $549 |
 | Per-eye resolution | 1920×1200 | 1920×1200 | 1920×1200 |
 | Refresh | 120 Hz | 120 Hz | 120 Hz |
 | FOV | 52° | 52° | **58°** |
-| Brightness | 700 nits | 1000 nits | **1250 nits** |
+| Brightness | 700 nits | **1500 nits** | 1250 nits |
 | Panel | Sony 0.68″ µ-OLED | Sony µ-OLED | Sony µ-OLED |
-| Weight | ~82 g | **79–81 g** | 88 g |
+| Weight | ~82 g | 83 g | 88 g |
 | Myopia adjust | — | **−4.0 D** | — |
 | Electrochromic | — | ✅ | ✅ (9 levels) |
-| Spatial engine | **X1 chip (hardware)** | SpaceWalker (software) | SpaceWalker (software) + 3DoF VisionPair |
+| Cameras / depth | — | **RGB + dual depth** | RGB (front) |
+| Spatial engine | **X1 chip (hardware)** | SpaceWalker + **6DoF** (cameras) | SpaceWalker + 3DoF |
 
-All three are **1200p / 120 Hz** Sony micro-OLED. The Beast is the widest and brightest
-(but heaviest and priciest); the Luma Pro is the lightest with myopia correction; the
-**1S is the cheapest and the only one with on-glasses spatial compute**.
+All three are **1200p / 120 Hz** Sony micro-OLED. The Beast has the **widest FOV (58°)**;
+the **Luma Ultra is the brightest (1500 nits)** and the only one with **6DoF + depth
+cameras** (hand tracking); the **1S is the cheapest and the only one with on-glasses
+spatial compute (X1)**.
+
+{{< hint warning >}}
+**Luma Ultra 6DoF needs a host.** Its 6DoF / hand-tracking requires the Viture **Pro
+Neckband**, a Mac or a PC — **not** a bare phone DisplayPort link. Over a Pixel you get
+the bright display + SpaceWalker, but not full 6DoF.
+{{< /hint >}}
 
 ## Software available right now (June 2026)
 
 | Approach | Glasses | What it does | Platforms |
 |---|---|---|---|
 | **X1 chip (built-in)** | XREAL 1S / One / One Pro | Native **3DoF anchoring**, **Ultrawide** (up to 310″), 3 ms latency — **no app** | Any DP/DeX source |
-| **SpaceWalker** (app) | Viture Beast / Luma (Pro/Ultra) | 3DoF, **multi-screen (up to 3)**, ultrawide, 1-click 2D→3D | Windows, macOS, iOS, Android |
+| **SpaceWalker** (app) | Viture Beast / Luma (Pro/Ultra) | 3DoF (6DoF on Ultra w/ host), **multi-screen (up to 3)**, ultrawide, 1-click 2D→3D | Windows, macOS, iOS, Android |
 | **Nebula** (legacy) | XREAL **Air** series only | Old multi-monitor app — **not supported on X1 glasses** | — |
 | **Android XR / Project Aura** | XREAL (partner) | Native Android multi-screen — **expected later 2026** | Android XR |
 
@@ -73,8 +81,8 @@ enlarge** that single canvas.
 | Priority | Pick |
 |---|---|
 | Cleanest spatial coding (anchor + ultrawide, **zero app**) | 🥇 **XREAL 1S** |
-| Lightest + myopia correction, bright panel | **Viture Luma Pro** |
-| Widest FOV / brightest, biggest canvas | **Viture Beast** |
+| Brightest panel + 6DoF / hand tracking (needs neckband/PC) | **Viture Luma Ultra** |
+| Widest FOV, big bright canvas | **Viture Beast** |
 
 The **XREAL 1S** fits pocketdesk best: hardware Ultrawide anchoring (stable on a bumpy
 commute) **without depending on a companion app**, paired with WM tiling for multi-pane.
