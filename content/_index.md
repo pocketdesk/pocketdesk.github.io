@@ -1,4 +1,4 @@
 ---
 title: "pocketdesk"
-description: "A pocket-sized Linux dev workstation — phone, AR glasses, folding keyboard. No laptop."
+description: "A pocket-sized Linux dev workstation — phone, XR display glasses, folding keyboard. No laptop."
 ---
