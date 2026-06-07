@@ -1,0 +1,35 @@
+version: '3'
+
+vars:
+  FPS: '30'
+
+tasks:
+  video:
+    desc: Regenerate the hero demo video (MP4 + WebM) from static/media/hero-demo.svg
+    dir: tools/video
+    cmds:
+      - npm install --no-audit --no-fund
+      - node capture.mjs ../../static/media/hero-demo.svg frames
+      - >-
+        pkgx +ffmpeg.org -- ffmpeg -y -hide_banner -loglevel error
+        -framerate {{.FPS}} -i frames/%04d.png
+        -c:v libx264 -pix_fmt yuv420p -crf 20 -preset slow -movflags +faststart
+        ../../static/media/demo.mp4
+      - >-
+        pkgx +ffmpeg.org -- ffmpeg -y -hide_banner -loglevel error
+        -framerate {{.FPS}} -i frames/%04d.png
+        -c:v libvpx-vp9 -pix_fmt yuv420p -b:v 0 -crf 34
+        ../../static/media/demo.webm
+      - rm -rf frames
+      - cmd: echo "✓ regenerated static/media/demo.mp4 + demo.webm"
+        silent: true
+
+  serve:
+    desc: Run the Hugo dev server for the landing page
+    cmds:
+      - hugo server -D
+
+  build:
+    desc: Build the landing site
+    cmds:
+      - hugo --gc --minify
