@@ -14,6 +14,8 @@ weight: 2
 
 ## Phone
 
+{{< figure src="/images/products/pixel-9-pro.svg" alt="Google Pixel Pro front render" width="190" caption="*Illustrative* — Pixel 9 Pro render; the 10/11 Pro XL share the family design." attr="Mliu92, CC BY-SA 4.0 (Wikimedia Commons)" attrlink="https://commons.wikimedia.org/wiki/File:Google_Pixel_9_(Obsidian)_front.svg" >}}
+
 The reference device is the largest Pixel Pro: **Pixel 10 Pro XL** now, **Pixel 11
 Pro XL** when it ships (~September 2026). Pixel matters here because the **graphical**
 Linux Terminal (Wayland + GPU) is, as of 2026, effectively a Pixel feature.
@@ -31,6 +33,8 @@ Re-confirm SoC, battery, USB/DisplayPort and Android version at launch.
 
 ## Glasses — Viture Beast
 
+{{< figure src="/images/products/ar-glasses-nreal-light.jpg" alt="AR glasses kit" width="430" caption="*Illustrative* — Nreal Light (Nreal is XReal's former name). The Beast / Luma Ultra / XReal 1S are different, newer models." attr="Mkkwan, CC BY-SA 4.0 (Wikimedia Commons)" attrlink="https://commons.wikimedia.org/wiki/File:Nreal_Light_Consumer_Kit.jpg" >}}
+
 XR glasses that present as a **plug-and-play DisplayPort monitor**: one USB-C cable,
 no software needed for basic display.
 
@@ -39,6 +43,8 @@ no software needed for basic display.
 - The Pixel sees them as an ordinary external display, so Desktop Mode "just works".
 
 ## Keyboard — ProtoArc XK01 TP (AZERTY)
+
+{{< figure src="/images/products/foldable-keyboard.jpg" alt="A folding Bluetooth keyboard" width="430" caption="*Illustrative* — Microsoft Universal Foldable Keyboard (a bi-fold). The ProtoArc XK01 TP is a tri-fold with an integrated trackpad." attr="Toshiyuki IMAI, CC BY-SA 2.0 (Wikimedia Commons)" attrlink="https://commons.wikimedia.org/wiki/File:Microsoft_Universal_Foldable_Keyboard_-_25228852970.jpg" >}}
 
 A **tri-fold** Bluetooth keyboard that unfolds to a **true full-size 105-key layout**
 (F-row, **dedicated arrow keys**, numpad) with an **integrated trackpad**.
