@@ -1,31 +1,13 @@
 baseURL = "https://pocketdesk.github.io/"
-languageCode = "en-us"
+locale = "en-us"
 title = "pocketdesk"
-theme = "hugo-book"
-
-# hugo-book settings
-disablePathToLower = false
-enableGitInfo = true
+enableGitInfo = false
+disableKinds = ["taxonomy", "term"]
 
 [params]
-  BookTheme = "auto"
-  BookToC = true
-  BookSection = "docs"
-  BookRepo = "https://github.com/pocketdesk/pocketdesk.github.io"
-  BookEditPath = "edit/main/content"
-  BookSearch = true
-  BookComments = false
+  description = "A pocket-sized Linux dev workstation — your phone is the computer, AR glasses are the screen, a folding keyboard is the input. No laptop."
+  docsURL = "/docs/"
+  ghOrg = "https://github.com/pocketdesk"
 
-[markup]
-  [markup.goldmark.renderer]
-    unsafe = true
-  [markup.highlight]
-    style = "github-dark"
-    noClasses = true
-    tabWidth = 2
-
-[menu]
-  [[menu.before]]
-    name = "Home"
-    url = "/"
-    weight = 1
+[markup.goldmark.renderer]
+  unsafe = true

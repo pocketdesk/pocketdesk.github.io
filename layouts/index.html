@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Site.Title }} — pocket-sized Linux dev workstation</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta property="og:title" content="pocketdesk">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/landing.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="/">pocket<span>desk</span></a>
+  <div class="nav-links">
+    <a href="{{ .Site.Params.docsURL }}">Docs</a>
+    <a href="{{ .Site.Params.docsURL }}docs/hardware/">Hardware</a>
+    <a href="{{ .Site.Params.ghOrg }}" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy reveal">
+      <h1>Your phone is the<br><span class="grad">workstation</span>.</h1>
+      <p class="lede">Code in <strong>VS Code on Linux</strong> running on a Pixel,
+      projected onto <strong>AR glasses</strong>, driven by a <strong>folding
+      keyboard</strong>. A real desktop — in your pocket. No laptop.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{ .Site.Params.docsURL }}">Read the docs →</a>
+        <a class="btn btn-ghost" href="{{ .Site.Params.ghOrg }}" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+      <p class="hint">Pixel 10 Pro XL today · 11 Pro XL tomorrow · model-agnostic</p>
+    </div>
+
+    <!-- animated multi-screen mock -->
+    <div class="hero-anim reveal" aria-hidden="true">
+      <div class="glasses-screen">
+        <span class="tile t1">VS&nbsp;Code</span>
+        <span class="tile t2">terminal</span>
+        <span class="tile t3">browser</span>
+      </div>
+      <div class="anim-caption">one ultrawide display · tiled by your window manager</div>
+    </div>
+  </div>
+</header>
+
+<!-- WHAT -->
+<section class="band">
+  <div class="wrap reveal">
+    <h2>A laptop-free dev setup</h2>
+    <p class="big">The phone is the computer. The glasses are the screen. A folding
+    keyboard is the input. On a train, a plane tray table, or a café — a full Linux
+    desktop with VS Code, anywhere.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="wrap">
+  <div class="features">
+    <div class="card reveal">
+      <div class="ic">📱</div>
+      <h3>Phone is the computer</h3>
+      <p>Android's Linux Terminal runs a full <strong>Debian VM</strong> (AVF/KVM). On
+      Pixel it includes GPU-accelerated GUI apps — a real VS&nbsp;Code window.</p>
+    </div>
+    <div class="card reveal">
+      <div class="ic">🕶️</div>
+      <h3>Glasses are the screen</h3>
+      <p>USB-C DisplayPort drives the AR glasses as a <strong>1200p wearable
+      monitor</strong> — Viture Beast / Luma Ultra or XREAL&nbsp;1S.</p>
+    </div>
+    <div class="card reveal">
+      <div class="ic">⌨️</div>
+      <h3>Folding keyboard</h3>
+      <p>A tri-fold Bluetooth keyboard with trackpad pairs in Android and is forwarded
+      into the VM. <strong>One device</strong> replaces keyboard + mouse.</p>
+    </div>
+    <div class="card reveal">
+      <div class="ic">🐧</div>
+      <h3>Linux + VS Code</h3>
+      <p>labwc (Wayland) + VS&nbsp;Code natively, or <strong>code-server</strong> in the
+      browser as a rock-solid fallback. Tile windows for multi-pane.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="band">
+  <div class="wrap reveal center">
+    <h2>The stack</h2>
+    <img class="diagram" src="/images/stack.svg" alt="pocketdesk stack: Pixel host → AR display, Bluetooth keyboard, Android Linux Terminal → labwc + VS Code / code-server">
+    <a class="btn btn-primary" href="{{ .Site.Params.docsURL }}">Build it — full guide →</a>
+  </div>
+</section>
+
+<!-- HARDWARE -->
+<section class="wrap reveal">
+  <h2 class="center">The hardware</h2>
+  <div class="gallery">
+    <figure>
+      <img src="/images/products/pixel-9-pro.svg" alt="Google Pixel Pro render" loading="lazy">
+      <figcaption>Pixel&nbsp;10/11 Pro&nbsp;XL — the computer</figcaption>
+    </figure>
+    <figure>
+      <img src="/images/products/ar-glasses-nreal-light.jpg" alt="AR glasses" loading="lazy">
+      <figcaption>AR glasses — the wearable screen</figcaption>
+    </figure>
+    <figure>
+      <img src="/images/products/foldable-keyboard.jpg" alt="Folding Bluetooth keyboard" loading="lazy">
+      <figcaption>Folding keyboard — the input</figcaption>
+    </figure>
+  </div>
+  <p class="muted center">Photos are illustrative, CC&nbsp;BY-SA via Wikimedia Commons —
+  see <a href="{{ .Site.Params.docsURL }}docs/credits/">image credits</a>.</p>
+</section>
+
+<!-- MULTISCREEN -->
+<section class="band">
+  <div class="wrap reveal two-col">
+    <div>
+      <h2>Multi-screen, the honest way</h2>
+      <p>A phone outputs <strong>one</strong> display. The glasses anchor and enlarge it;
+      your <strong>multiple panes come from tiling</strong> in the Wayland compositor —
+      not from any glasses app.</p>
+      <p>XREAL's X1 chip anchors in hardware (no app); Viture anchors via SpaceWalker.</p>
+      <a class="btn btn-ghost" href="{{ .Site.Params.docsURL }}docs/multi-screen/">Compare the glasses →</a>
+    </div>
+    <img class="diagram" src="/images/multiscreen.svg" alt="One ultrawide DisplayPort output tiled into VS Code, terminal and browser by sway/labwc">
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final reveal">
+  <div class="wrap center">
+    <h2>Put a Linux desktop in your pocket.</h2>
+    <a class="btn btn-primary btn-lg" href="{{ .Site.Params.docsURL }}">Get started →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>pocketdesk</strong> · community knowledge base — not affiliated with
+    Google, Viture, or XREAL. Pre-release specs are leaks; re-verify at launch.</p>
+    <p class="muted">
+      <a href="{{ .Site.Params.docsURL }}">Docs</a> ·
+      <a href="{{ .Site.Params.docsURL }}docs/credits/">Image credits</a> ·
+      <a href="{{ .Site.Params.ghOrg }}" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // reveal-on-scroll
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
