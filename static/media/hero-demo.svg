@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="-apple-system,Segoe UI,Roboto,sans-serif" role="img" aria-label="pocketdesk demo: an ultrawide screen building VS Code, a terminal and a browser, tiled by the window manager">
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4c6ef5"/><stop offset=".55" stop-color="#7048e8"/><stop offset="1" stop-color="#12b886"/>
+    </linearGradient>
+    <clipPath id="screen"><rect x="20" y="40" width="600" height="280" rx="16"/></clipPath>
+  </defs>
+
+  <!-- backdrop -->
+  <rect x="0" y="0" width="640" height="360" rx="18" fill="#0b0f17"/>
+
+  <!-- screen frame with pulsing glow -->
+  <rect x="20" y="40" width="600" height="280" rx="16" fill="#0e1422" stroke="url(#glow)" stroke-width="2.5">
+    <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- window chrome dots -->
+  <g>
+    <circle cx="40" cy="58" r="4.5" fill="#f87171"/>
+    <circle cx="56" cy="58" r="4.5" fill="#fbbf24"/>
+    <circle cx="72" cy="58" r="4.5" fill="#34d399"/>
+  </g>
+  <text x="600" y="62" text-anchor="end" fill="#5b6b80" font-size="11">pocketdesk · sway</text>
+
+  <g clip-path="url(#screen)">
+    <!-- ===== Terminal pane (left) ===== -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.06;.8;.92;1" dur="7s" begin="0.2s" repeatCount="indefinite"/>
+      <rect x="36" y="78" width="250" height="226" rx="9" fill="#0a0e16" stroke="#1f2a3a"/>
+      <text x="48" y="100" fill="#12b886" font-size="12" font-family="monospace">› labwc &amp;</text>
+      <!-- typed line grows -->
+      <text x="48" y="120" fill="#cdd6e3" font-size="12" font-family="monospace">› code .</text>
+      <g fill="#3a4456">
+        <rect x="48" y="134" width="0" height="7" rx="2"><animate attributeName="width" values="0;150;150;0" keyTimes="0;.18;.85;1" dur="7s" begin="0.6s" repeatCount="indefinite"/></rect>
+        <rect x="48" y="150" width="0" height="7" rx="2"><animate attributeName="width" values="0;200;200;0" keyTimes="0;.26;.85;1" dur="7s" begin="0.6s" repeatCount="indefinite"/></rect>
+        <rect x="48" y="166" width="0" height="7" rx="2"><animate attributeName="width" values="0;120;120;0" keyTimes="0;.34;.85;1" dur="7s" begin="0.6s" repeatCount="indefinite"/></rect>
+      </g>
+      <!-- blinking cursor -->
+      <rect x="100" y="113" width="7" height="11" fill="#12b886"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+    </g>
+
+    <!-- ===== VS Code pane (top right) ===== -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.06;.8;.92;1" dur="7s" begin="1.5s" repeatCount="indefinite"/>
+      <rect x="300" y="78" width="304" height="138" rx="9" fill="#11161f" stroke="#1f2a3a"/>
+      <rect x="300" y="78" width="304" height="20" rx="9" fill="#0d1f3f"/>
+      <text x="314" y="92" fill="#4c6ef5" font-size="11" font-weight="700">VS Code</text>
+      <!-- code lines -->
+      <g>
+        <rect x="316" y="112" width="60"  height="7" rx="2" fill="#7048e8"><animate attributeName="opacity" values="0;1" dur=".4s" begin="1.8s" fill="freeze"/></rect>
+        <rect x="384" y="112" width="120" height="7" rx="2" fill="#3a4456"><animate attributeName="opacity" values="0;1" dur=".4s" begin="2.0s" fill="freeze"/></rect>
+        <rect x="332" y="128" width="90"  height="7" rx="2" fill="#12b886"><animate attributeName="opacity" values="0;1" dur=".4s" begin="2.2s" fill="freeze"/></rect>
+        <rect x="430" y="128" width="70"  height="7" rx="2" fill="#3a4456"><animate attributeName="opacity" values="0;1" dur=".4s" begin="2.4s" fill="freeze"/></rect>
+        <rect x="332" y="144" width="140" height="7" rx="2" fill="#f59f00"><animate attributeName="opacity" values="0;1" dur=".4s" begin="2.6s" fill="freeze"/></rect>
+        <rect x="316" y="160" width="80"  height="7" rx="2" fill="#3a4456"><animate attributeName="opacity" values="0;1" dur=".4s" begin="2.8s" fill="freeze"/></rect>
+        <rect x="404" y="160" width="100" height="7" rx="2" fill="#4c6ef5"><animate attributeName="opacity" values="0;1" dur=".4s" begin="3.0s" fill="freeze"/></rect>
+        <rect x="332" y="176" width="60"  height="7" rx="2" fill="#3a4456"><animate attributeName="opacity" values="0;1" dur=".4s" begin="3.2s" fill="freeze"/></rect>
+      </g>
+    </g>
+
+    <!-- ===== Browser pane (bottom right) ===== -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1;1;1;0" keyTimes="0;.06;.8;.92;1" dur="7s" begin="2.6s" repeatCount="indefinite"/>
+      <rect x="300" y="224" width="304" height="80" rx="9" fill="#12101c" stroke="#2a2140"/>
+      <rect x="300" y="224" width="304" height="18" rx="9" fill="#1a1430"/>
+      <circle cx="314" cy="233" r="3.5" fill="#7048e8"/>
+      <rect x="326" y="230" width="150" height="6" rx="3" fill="#3a3356"/>
+      <rect x="316" y="256" width="120" height="7" rx="2" fill="#3a4456"/>
+      <rect x="316" y="272" width="200" height="7" rx="2" fill="#3a4456"/>
+      <rect x="316" y="288" width="90"  height="7" rx="2" fill="#7048e8"/>
+    </g>
+
+    <!-- pointer that hops between panes -->
+    <g>
+      <path d="M0 0 L0 14 L4 11 L7 17 L9 16 L6 10 L11 10 Z" fill="#fff" stroke="#0b0f17" stroke-width=".6">
+        <animateTransform attributeName="transform" type="translate"
+          values="120,150; 120,150; 430,150; 430,150; 470,270; 470,270; 120,150"
+          keyTimes="0;.18;.34;.55;.62;.85;1" dur="7s" begin="0.6s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+</svg>

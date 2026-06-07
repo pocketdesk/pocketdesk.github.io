@@ -37,13 +37,16 @@
       <p class="hint">Pixel 10 Pro XL today · 11 Pro XL tomorrow · model-agnostic</p>
     </div>
 
-    <!-- hero visual: demo video if present (drop static/media/demo.mp4), else animated mock -->
+    <!-- hero visual: real demo video if present (drop static/media/demo.mp4),
+         else the in-theme animated SVG loop, else the CSS mock -->
     <div class="hero-anim reveal">
       {{ if os.FileExists "static/media/demo.mp4" }}
-      <video class="hero-video" autoplay muted loop playsinline poster="/images/stack.svg">
+      <video class="hero-video" autoplay muted loop playsinline poster="/media/hero-demo.svg">
         <source src="/media/demo.mp4" type="video/mp4">
         {{ if os.FileExists "static/media/demo.webm" }}<source src="/media/demo.webm" type="video/webm">{{ end }}
       </video>
+      {{ else if os.FileExists "static/media/hero-demo.svg" }}
+      <img class="hero-video" src="/media/hero-demo.svg" alt="pocketdesk demo loop: an ultrawide screen building VS Code, a terminal and a browser, tiled by the window manager">
       {{ else }}
       <div class="glasses-screen" aria-hidden="true">
         <span class="tile t1">VS&nbsp;Code</span>
