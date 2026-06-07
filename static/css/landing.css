@@ -31,7 +31,7 @@ h2{font-size:clamp(1.6rem,3.5vw,2.4rem); margin-top:0}
 .brand span{color:var(--brand)}
 .nav-links a{color:var(--mut); margin-left:20px; font-weight:600}
 .nav-links a:hover{color:var(--ink); text-decoration:none}
-.nav-links a.gh-link{display:inline-flex; align-items:center; gap:6px}
+.gh-link{display:inline-flex; align-items:center; gap:6px; vertical-align:middle}
 .gh-icon{fill:currentColor; flex:0 0 auto}
 
 /* hero */
