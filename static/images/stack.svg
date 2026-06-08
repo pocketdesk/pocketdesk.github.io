@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="-apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-label="pocketdesk stack diagram">
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto-start-reverse" markerUnits="strokeWidth">
       <path d="M0,0 L6,3 L0,6 Z" fill="#adb5bd"/>
     </marker>
   </defs>
@@ -10,10 +10,26 @@
   <text x="380" y="52" text-anchor="middle" fill="#fff" font-size="15" font-weight="600">Pixel 10 Pro XL — today</text>
   <text x="380" y="74" text-anchor="middle" fill="#dbe4ff" font-size="13">11 Pro XL — tomorrow (Tensor G6)</text>
 
-  <!-- arrows host -> row2 -->
-  <line x1="380" y1="90" x2="132" y2="150" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- charger / power source -->
+  <rect x="20" y="28" width="150" height="46" rx="10" fill="#e8590c"/>
+  <text x="95" y="49" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">⚡ Charger</text>
+  <text x="95" y="65" text-anchor="middle" fill="#ffe8cc" font-size="10">or PD power bank</text>
+
+  <!-- USB-C hub (DP + PD split) -->
+  <rect x="20" y="104" width="224" height="40" rx="10" fill="#1098ad"/>
+  <text x="132" y="121" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">USB-C hub</text>
+  <text x="132" y="137" text-anchor="middle" fill="#c5f6fa" font-size="10">DP video out + PD charge in</text>
+
+  <!-- charger -> hub (power in) -->
+  <line x1="95" y1="74" x2="112" y2="102" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- host -> row2 (left arrow re-routed through the hub, double-headed: video down, charge up) -->
+  <line x1="380" y1="90" x2="150" y2="104" stroke="#adb5bd" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
   <line x1="380" y1="90" x2="380" y2="150" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrow)"/>
   <line x1="380" y1="90" x2="628" y2="150" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- hub -> display -->
+  <line x1="132" y1="144" x2="132" y2="151" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrow)"/>
 
   <!-- row2: display -->
   <rect x="20" y="152" width="224" height="84" rx="10" fill="#12b886"/>
@@ -46,5 +62,6 @@
   <text x="688" y="360" text-anchor="middle" fill="#ced4da" font-size="10">browser · fallback</text>
 
   <!-- caption -->
-  <text x="380" y="430" text-anchor="middle" fill="#868e96" font-size="12">All input pairs in Android · multi-pane comes from the Wayland compositor's tiling</text>
+  <text x="380" y="424" text-anchor="middle" fill="#868e96" font-size="12">All input pairs in Android · multi-pane comes from the Wayland compositor's tiling</text>
+  <text x="380" y="446" text-anchor="middle" fill="#868e96" font-size="11">The USB-C hub splits the single port — the glasses get video while the phone keeps charging</text>
 </svg>
