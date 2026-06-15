@@ -1,175 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Site.Title }} — pocket-sized Linux dev workstation</title>
-  <meta name="description" content="{{ .Site.Params.description }}">
-  <meta property="og:title" content="pocketdesk">
-  <meta property="og:description" content="{{ .Site.Params.description }}">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/landing.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Site.Title }} — a pocket-sized Linux dev workstation</title>
+<meta name="description" content="pocketdesk is a community knowledge base for running a full Linux dev desktop from your phone: VS Code on a Debian VM (Android's Linux Terminal, AVF/KVM) on a Pixel, displayed on AR/XR glasses over USB-C DisplayPort, driven by a folding Bluetooth keyboard. A real desktop, in your pocket. No laptop.">
+<meta property="og:title" content="pocketdesk">
+<meta property="og:description" content="A pocket-sized Linux dev workstation — your phone is the computer, AR glasses are the screen, a folding keyboard is the input. No laptop.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1b1f24; --muted: #57606a; --card: #f6f8fa;
+    --border: #d0d7de; --accent: #0f766e; --accent-fg: #ffffff;
+    --guide: #0f766e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117; --fg: #e6edf3; --muted: #9198a1; --card: #161b22;
+      --border: #30363d; --accent: #34d399; --accent-fg: #0d1117;
+      --guide: #34d399;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 72px 0 32px; text-align: center; }
+  .logo { width: 88px; height: 88px; margin: 0 auto 18px; display: block; }
+  h1 { font-size: 2.6rem; margin: 0 0 .3em; letter-spacing: -.02em; }
+  .tagline { font-size: 1.2rem; color: var(--muted); margin: 0 auto; max-width: 680px; }
+  .pills { margin: 22px 0 0; }
+  .pill {
+    display: inline-block; margin: 4px; padding: 3px 10px; font-size: .82rem;
+    color: var(--muted); background: var(--card); border: 1px solid var(--border); border-radius: 999px;
+  }
+  .cta { margin: 30px 0 0; }
+  .btn {
+    display: inline-block; padding: 10px 18px; margin: 4px; border-radius: 8px; text-decoration: none;
+    font-weight: 600; border: 1px solid var(--border);
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+  .btn.ghost { color: var(--fg); background: transparent; }
+  .lead { color: var(--fg); max-width: 800px; margin: 8px auto 0; text-align: center; }
+  .lead code { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; }
+  h2.section { text-align: center; margin: 40px 0 4px; font-size: 1.4rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; padding: 16px 0 8px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; }
+  .card h3 { margin: 0 0 .35em; font-size: 1.2rem; display: flex; align-items: center; justify-content: space-between; }
+  .card h3 a { text-decoration: none; }
+  .card .accel { color: var(--muted); font-size: .85rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0 0 .6em; }
+  .card p { margin: 0 0 .8em; color: var(--fg); font-size: .95rem; }
+  .card .badges { margin-top: auto; }
+  .card .badges img { height: 20px; vertical-align: middle; }
+  .card h3 .tags { display: inline-flex; gap: 6px; }
+  .type { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); }
+  .type.docs { color: var(--guide); border-color: var(--guide); }
+  .type.assets { color: var(--muted); }
+  .principles { color: var(--muted); text-align: center; padding: 10px 0 0; max-width: 820px; margin: 0 auto; }
+  footer { color: var(--muted); text-align: center; padding: 40px 0 56px; font-size: .9rem; }
+  a { color: var(--accent); }
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
-
-<nav class="nav">
-  <a class="brand" href="/">pocket<span>desk</span></a>
-  <div class="nav-links">
-    <a href="{{ .Site.Params.docsURL }}">Docs</a>
-    <a href="{{ .Site.Params.docsURL }}hardware/">Hardware</a>
-    <a class="gh-link" href="{{ .Site.Params.ghOrg }}" target="_blank" rel="noopener" aria-label="pocketdesk on GitHub"><svg class="gh-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-inner">
-    <div class="hero-copy reveal">
-      <h1>Your phone is the<br><span class="grad">workstation</span>.</h1>
-      <p class="lede">Code in <strong>VS Code on Linux</strong> running on a Pixel,
-      projected onto <strong>XR display glasses</strong>, driven by a <strong>folding
-      keyboard</strong>. A real desktop — in your pocket. No laptop.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="{{ .Site.Params.docsURL }}">Read the docs →</a>
-        <a class="btn btn-ghost" href="{{ .Site.Params.ghOrg }}" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-      <p class="hint">Pixel 10 Pro XL today · 11 Pro XL tomorrow · model-agnostic</p>
+  <header class="wrap">
+    <img class="logo" src="/img/logo.svg" alt="pocketdesk logo" width="88" height="88">
+    <h1>pocketdesk</h1>
+    <p class="tagline">A <strong>pocket-sized Linux dev workstation</strong> — your phone is
+      the computer, AR glasses are the screen, a folding keyboard is the input.
+      A real desktop, in your pocket. <strong>No laptop.</strong></p>
+    <div class="pills">
+      <span class="pill">Android Linux Terminal (AVF/KVM)</span>
+      <span class="pill">Debian VM · labwc · VS&nbsp;Code (Wayland)</span>
+      <span class="pill">USB-C DisplayPort → AR/XR glasses</span>
+      <span class="pill">folding Bluetooth keyboard + trackpad</span>
+      <span class="pill">model-agnostic (Pixel today)</span>
+      <span class="pill">community knowledge base</span>
     </div>
+    <div class="cta">
+      <a class="btn primary" href="https://pocketdesk.github.io/docs/">Documentation</a>
+      <a class="btn ghost" href="https://github.com/pocketdesk">GitHub</a>
+    </div>
+  </header>
 
-    <!-- hero visual: real demo video if present (drop static/media/demo.mp4),
-         else the in-theme animated SVG loop, else the CSS mock -->
-    <div class="hero-anim reveal">
-      {{ if os.FileExists "static/media/demo.mp4" }}
-      <video class="hero-video" autoplay muted loop playsinline poster="/media/hero-demo.svg">
-        <source src="/media/demo.mp4" type="video/mp4">
-        {{ if os.FileExists "static/media/demo.webm" }}<source src="/media/demo.webm" type="video/webm">{{ end }}
-      </video>
-      {{ else if os.FileExists "static/media/hero-demo.svg" }}
-      <img class="hero-video" src="/media/hero-demo.svg" alt="pocketdesk demo loop: an ultrawide screen building VS Code, a terminal and a browser, tiled by the window manager">
-      {{ else }}
-      <div class="glasses-screen" aria-hidden="true">
-        <span class="tile t1">VS&nbsp;Code</span>
-        <span class="tile t2">terminal</span>
-        <span class="tile t3">browser</span>
-      </div>
+  <main class="wrap">
+    <p class="lead">pocketdesk documents a fully mobile development setup: write code in
+      <strong>VS&nbsp;Code on Linux</strong> (Debian / Wayland) running <strong>directly on a
+      Pixel phone</strong>, displayed on <strong>AR glasses</strong>, driven by a
+      <strong>folding Bluetooth keyboard with trackpad</strong>. Train, plane tray table, or
+      café — a real desktop in your pocket, with no laptop to carry.</p>
+
+    <p class="lead">It works because three recent pieces line up: <strong>Android's Linux
+      Terminal</strong> (Android&nbsp;16+) runs a full Debian VM through the Android
+      Virtualization Framework — on Pixel with <strong>GPU-accelerated GUI apps</strong>, so a
+      real VS&nbsp;Code window, not just a shell; <strong>USB-C DisplayPort Alt&nbsp;Mode</strong>
+      lets the phone drive the glasses as a wearable <code>1200p</code> monitor; and
+      <strong>Bluetooth HID</strong> keyboard/mouse pair at the Android level and forward into
+      the VM. The chain depends on <strong>Android + AVF</strong>, not a specific phone — the
+      guides work on a Pixel today and transpose unchanged as new models ship.</p>
+
+    <h2 class="section">Repositories</h2>
+    <section class="grid">
+      {{ range .Site.Params.repos }}
+      <article class="card">
+        <h3>
+          <a href="https://github.com/pocketdesk/{{ .name }}"><code>{{ .name }}</code></a>
+          <span class="tags"><span class="type {{ .type }}">{{ .type }}</span></span>
+        </h3>
+        <p class="accel">{{ .accel }}</p>
+        <p>{{ .result }}</p>
+        {{ if .ci }}
+        <div class="badges">
+          <a href="https://github.com/pocketdesk/{{ .name }}/actions/workflows/{{ .ci }}"><img src="https://github.com/pocketdesk/{{ .name }}/actions/workflows/{{ .ci }}/badge.svg" alt="CI"></a>
+        </div>
+        {{ end }}
+      </article>
       {{ end }}
-      <div class="anim-caption">one ultrawide display · tiled by your window manager</div>
-    </div>
-  </div>
-</header>
+    </section>
+    <p class="principles">pocketdesk is a community knowledge base — <strong>not affiliated</strong>
+      with Google, Viture, or XREAL. Pre-release device specs are leaks and must be re-confirmed at
+      launch; everything moves fast across Android 16/17, so re-verify after major updates. Content is
+      BSD-3-Clause; the documentation site is built with Hugo and deployed from the
+      <code>docs</code> source.</p>
+  </main>
 
-<!-- WHAT -->
-<section class="band">
-  <div class="wrap reveal">
-    <h2>A laptop-free dev setup</h2>
-    <p class="big">The phone is the computer. The glasses are the screen. A folding
-    keyboard is the input. On a train, a plane tray table, or a café — a full Linux
-    desktop with VS Code, anywhere.</p>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="wrap">
-  <div class="features">
-    <div class="card reveal">
-      <div class="ic">📱</div>
-      <h3>Phone is the computer</h3>
-      <p>Android's Linux Terminal runs a full <strong>Debian VM</strong> (AVF/KVM). On
-      Pixel it includes GPU-accelerated GUI apps — a real VS&nbsp;Code window.</p>
-    </div>
-    <div class="card reveal">
-      <div class="ic">🕶️</div>
-      <h3>Glasses are the screen</h3>
-      <p>USB-C DisplayPort drives the XR display glasses as a <strong>1200p wearable
-      monitor</strong> — Viture Beast / Luma Ultra or XREAL&nbsp;1S.</p>
-    </div>
-    <div class="card reveal">
-      <div class="ic">⌨️</div>
-      <h3>Folding keyboard</h3>
-      <p>A tri-fold Bluetooth keyboard with trackpad pairs in Android and is forwarded
-      into the VM. <strong>One device</strong> replaces keyboard + mouse.</p>
-    </div>
-    <div class="card reveal">
-      <div class="ic">🐧</div>
-      <h3>Linux + VS Code</h3>
-      <p>labwc (Wayland) + VS&nbsp;Code natively, or <strong>code-server</strong> in the
-      browser as a rock-solid fallback. Tile windows for multi-pane.</p>
-    </div>
-  </div>
-</section>
-
-<!-- STACK -->
-<section class="band">
-  <div class="wrap reveal center">
-    <h2>The stack</h2>
-    <img class="diagram" src="/images/stack.svg" alt="pocketdesk stack: Pixel host → XR display, Bluetooth keyboard, Android Linux Terminal → labwc + VS Code / code-server">
-    <a class="btn btn-primary" href="{{ .Site.Params.docsURL }}">Build it — full guide →</a>
-  </div>
-</section>
-
-<!-- HARDWARE -->
-<section class="wrap reveal">
-  <h2 class="center">The hardware</h2>
-  <div class="gallery">
-    <figure>
-      <img src="/images/products/pixel-9-pro.svg" alt="Google Pixel Pro render" loading="lazy">
-      <figcaption>Pixel&nbsp;10/11 Pro&nbsp;XL — the computer</figcaption>
-    </figure>
-    <figure>
-      <img src="/images/products/ar-glasses-nreal-light.jpg" alt="XR display glasses" loading="lazy">
-      <figcaption>XR display glasses — the wearable screen</figcaption>
-    </figure>
-    <figure>
-      <img src="/images/products/foldable-keyboard.jpg" alt="Folding Bluetooth keyboard" loading="lazy">
-      <figcaption>Folding keyboard — the input</figcaption>
-    </figure>
-  </div>
-  <p class="muted center">Photos are illustrative, CC&nbsp;BY-SA via Wikimedia Commons —
-  see <a href="{{ .Site.Params.docsURL }}credits/">image credits</a>.</p>
-</section>
-
-<!-- MULTISCREEN -->
-<section class="band">
-  <div class="wrap reveal two-col">
-    <div>
-      <h2>Multi-screen, the honest way</h2>
-      <p>A phone outputs <strong>one</strong> display. The glasses anchor and enlarge it;
-      your <strong>multiple panes come from tiling</strong> in the Wayland compositor —
-      not from any glasses app.</p>
-      <p>XREAL's X1 chip anchors in hardware (no app); Viture anchors via SpaceWalker.</p>
-      <a class="btn btn-ghost" href="{{ .Site.Params.docsURL }}multi-screen/">Compare the glasses →</a>
-    </div>
-    <img class="diagram" src="/images/multiscreen.svg" alt="One ultrawide DisplayPort output tiled into VS Code, terminal and browser by sway/labwc">
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-final reveal">
-  <div class="wrap center">
-    <h2>Put a Linux desktop in your pocket.</h2>
-    <a class="btn btn-primary btn-lg" href="{{ .Site.Params.docsURL }}">Get started →</a>
-  </div>
-</section>
-
-<footer class="foot">
-  <div class="wrap">
-    <p><strong>pocketdesk</strong> · community knowledge base — not affiliated with
-    Google, Viture, or XREAL. Pre-release specs are leaks; re-verify at launch.</p>
-    <p class="muted">
-      <a href="{{ .Site.Params.docsURL }}">Docs</a> ·
-      <a href="{{ .Site.Params.docsURL }}credits/">Image credits</a> ·
-      <a class="gh-link" href="{{ .Site.Params.ghOrg }}" target="_blank" rel="noopener" aria-label="pocketdesk on GitHub"><svg class="gh-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a>
-    </p>
-  </div>
-</footer>
-
-<script>
-  // reveal-on-scroll
-  const io = new IntersectionObserver((es) => {
-    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
+  <footer class="wrap">
+    BSD-3-Clause · <a href="https://github.com/pocketdesk">github.com/pocketdesk</a> ·
+    <a href="https://pocketdesk.github.io/docs/">Documentation</a>
+  </footer>
 </body>
 </html>
