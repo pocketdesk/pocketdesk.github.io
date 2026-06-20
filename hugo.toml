@@ -2,24 +2,12 @@ baseURL = "https://pocketdesk.github.io/"
 locale = "en-us"
 title = "pocketdesk"
 enableGitInfo = false
-disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "A pocket-sized Linux dev workstation — your phone is the computer, AR glasses are the screen, a folding keyboard is the input. No laptop."
+  docsURL = "/docs/"
+  ghOrg = "https://github.com/pocketdesk"
 
 [markup.goldmark.renderer]
   unsafe = true
-
-# Repository cards. pocketdesk is a documentation org, so its substantive public
-# repos are the docs source and the brand assets. "type" labels the repo honestly;
-# "ci" is the workflow filename only when a real CI badge resolves.
-[[params.repos]]
-  name = "docs"
-  accel = "documentation source (Hugo)"
-  type = "docs"
-  ci = "hugo.yml"
-  result = "The pocketdesk guides — hardware reference, the Android Linux Terminal / Debian VM setup, the AR-glasses display chain, multi-screen tiling, and the folding-keyboard pairing. Built with Hugo and deployed to pocketdesk.github.io/docs/."
-
-[[params.repos]]
-  name = "brand"
-  accel = "logos & icons"
-  type = "assets"
-  ci = ""
-  result = "Official pocketdesk brand assets — the rounded-square badge with its line glyph, in colour / white / black variants, plus PNG, JPG, ICO, ICNS, GitHub avatar and social-preview exports."
