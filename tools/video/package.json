@@ -7,6 +7,6 @@
     "capture": "node capture.mjs ../../static/media/hero-demo.svg frames"
   },
   "dependencies": {
-    "puppeteer-core": "^23.0.0"
+    "puppeteer-core": "^25.0.0"
   }
 }
