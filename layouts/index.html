@@ -36,8 +36,8 @@
       projected onto <strong>XR display glasses</strong>, driven by a <strong>folding
       keyboard</strong>. A real desktop — in your pocket. No laptop.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="{{ .Site.Params.docsURL }}">Read the docs →</a>
-        <a class="btn btn-ghost" href="{{ .Site.Params.ghOrg }}" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn btn-primary" href="{{ .Site.Params.docsURL }}">{{ partial "icons/book.html" . }}Read the docs →</a>
+        <a class="btn btn-ghost" href="{{ .Site.Params.ghOrg }}" target="_blank" rel="noopener">{{ partial "icons/mark-github.html" . }}View on GitHub</a>
       </div>
       <p class="hint">Pixel 10 Pro today · 11 Pro tomorrow · model-agnostic</p>
     </div>
@@ -109,7 +109,7 @@
   <div class="wrap reveal center">
     <h2>The stack</h2>
     <img class="diagram" src="/images/stack.svg" alt="pocketdesk stack: Pixel host → XR display, Bluetooth keyboard, Android Linux Terminal → labwc + VS Code / code-server">
-    <a class="btn btn-primary" href="{{ .Site.Params.docsURL }}">Build it — full guide →</a>
+    <a class="btn btn-primary" href="{{ .Site.Params.docsURL }}">{{ partial "icons/book.html" . }}Build it — full guide →</a>
   </div>
 </section>
 
@@ -143,7 +143,7 @@
       your <strong>multiple panes come from tiling</strong> in the Wayland compositor —
       not from any glasses app.</p>
       <p>XREAL's X1 chip anchors in hardware (no app); Viture anchors via SpaceWalker.</p>
-      <a class="btn btn-ghost" href="{{ .Site.Params.docsURL }}multi-screen/">Compare the glasses →</a>
+      <a class="btn btn-ghost" href="{{ .Site.Params.docsURL }}multi-screen/">{{ partial "icons/book.html" . }}Compare the glasses →</a>
     </div>
     <img class="diagram" src="/images/multiscreen.svg" alt="One ultrawide DisplayPort output tiled into VS Code, terminal and browser by sway/labwc">
   </div>
@@ -153,7 +153,7 @@
 <section class="cta-final reveal">
   <div class="wrap center">
     <h2>Put a Linux desktop in your pocket.</h2>
-    <a class="btn btn-primary btn-lg" href="{{ .Site.Params.docsURL }}">Get started →</a>
+    <a class="btn btn-primary btn-lg" href="{{ .Site.Params.docsURL }}">{{ partial "icons/rocket.html" . }}Get started →</a>
   </div>
 </section>
 
